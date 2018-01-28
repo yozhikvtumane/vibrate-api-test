@@ -34,9 +34,7 @@
 		var vibrateInterval;
 
 		// Starts vibration at passed in level
-		function startVibrate(duration) {
-			navigator.vibrate(duration);
-		}
+
 
 		// Stops vibration
 		function stopVibrate() {
@@ -56,7 +54,10 @@
 		var buttonStart = document.getElementById('buttonStart');
 		var buttonStart = document.getElementById('buttonStart');
 
-		buttonStart.addEventListener('click', startVibrate(500));
+		buttonStart.addEventListener('click', function () {
+					
+			navigator.vibrate(50);
+		});
 		buttonStop.addEventListener('click', stopVibrate);
 	});
 	</script>
