@@ -31,32 +31,24 @@
 	<div id="buttonStop" class="button">Stop</div>
 	<script>
 	window.addEventListener('load', function() {
-		var vibrateInterval;
 
-		// Starts vibration at passed in level
 
 
 		// Stops vibration
 		function stopVibrate() {
 			// Clear interval and stop persistent vibrating
 			if (vibrateInterval) clearInterval(vibrateInterval);
-			navigator.vibrate(0);
+			Navigator.vibrate(0);
 		}
 
-		// Start persistent vibration at given duration and interval
-		// Assumes a number value is given
-		function startPersistentVibrate(duration, interval) {
-			vibrateInterval = setInterval(function() {
-				startVibrate(duration);
-			}, interval);
-		}
+
 
 		var buttonStart = document.getElementById('buttonStart');
 		var buttonStart = document.getElementById('buttonStart');
 
 		buttonStart.addEventListener('click', function () {
 					
-			navigator.vibrate(500);
+			Navigator.vibrate(500);
 		});
 		buttonStop.addEventListener('click', stopVibrate);
 	});
