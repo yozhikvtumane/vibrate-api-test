@@ -38,7 +38,7 @@
 		function stopVibrate() {
 			// Clear interval and stop persistent vibrating
 			if (vibrateInterval) clearInterval(vibrateInterval);
-			Navigator.vibrate(0);
+			window.navigator.vibrate(0);
 		}
 
 
@@ -48,7 +48,7 @@
 
 		buttonStart.addEventListener('click', function () {
 					
-			Navigator.vibrate(500);
+			window.navigator.vibrate(500);
 		});
 		buttonStop.addEventListener('click', stopVibrate);
 	});
