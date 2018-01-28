@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Vibrate api test</title>
+	<style>
+	.button {
+		/*   width: 100px; */
+		height: 100px;
+		background: #333;
+		color: #fff;
+		font-size: 3em;
+		margin-bottom: 10px;
+		cursor: pointer;
+		text-align: center;
+	}
+
+	#buttonStart {
+		background: green;
+	}
+
+	#buttonStop {
+		background: red;
+	}
+	</style>
+</head>
+
+<body>
+	<div id="buttonStart" class="button">Start</div>
+	<div id="buttonStop" class="button">Stop</div>
+	<script>
+	window.addEventListener('load', function() {
+		var vibrateInterval;
+
+		// Starts vibration at passed in level
+		function startVibrate(duration) {
+			navigator.vibrate(duration);
+		}
+
+		// Stops vibration
+		function stopVibrate() {
+			// Clear interval and stop persistent vibrating
+			if (vibrateInterval) clearInterval(vibrateInterval);
+			navigator.vibrate(0);
+		}
+
+		// Start persistent vibration at given duration and interval
+		// Assumes a number value is given
+		function startPersistentVibrate(duration, interval) {
+			vibrateInterval = setInterval(function() {
+				startVibrate(duration);
+			}, interval);
+		}
+
+		var buttonStart = document.getElementById('buttonStart');
+		var buttonStart = document.getElementById('buttonStart');
+
+		buttonStart.addEventListener('click', startVibrate(5));
+		buttonStop.addEventListener('click', stopVibrate);
+	});
+	</script>
+</body>
+
+</html>
